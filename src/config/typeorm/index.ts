@@ -10,22 +10,12 @@ export const AppDataSource = new DataSource({
   database: "test",
   entities: [User],
   synchronize: false,
+  migrationsRun: false,
   logging: false,
   migrationsTableName: "migrations",
-  migrations: ["**/migration/*.ts"],
+  migrations: ["dist/**/migration/*.js"],
 });
 
 export const setupTypeOrm = async () => {
-  const AppDataSource = new DataSource({
-    type: "mysql",
-    host: "localhost",
-    port: 3306,
-    username: "root",
-    password: "root",
-    database: "test",
-    entities: [User],
-    synchronize: false,
-    logging: false,
-  });
   await AppDataSource.initialize();
 };
