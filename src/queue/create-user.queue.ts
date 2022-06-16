@@ -1,5 +1,5 @@
-import { JobEnum } from "./../core/constants/jobs";
-import { ICreateUserQueue } from "../core/queues/icreate-user-queue";
+import { JobEnum } from "../core/constant/jobs";
+import { ICreateUserQueue } from "../core/queue/icreate-user-queue";
 
 export class CreateUserQueue implements ICreateUserQueue {
   constructor() {

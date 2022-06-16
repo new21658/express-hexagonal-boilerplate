@@ -1,8 +1,8 @@
-import { IUserRepository } from "../../repositories/user/iuser.repository";
-import { TYPES } from "./../../../types";
+import { IUserRepository } from "../../repository/user/iuser.repository";
+import { TYPES } from "../../../types";
 import { inject, injectable } from "inversify";
-import { ICreateUserQueue } from "../../queues/icreate-user-queue";
-import { UserEntity } from "../../entities/user.entity";
+import { ICreateUserQueue } from "../../queue/icreate-user-queue";
+import { UserEntity } from "../../entity/user.entity";
 
 @injectable()
 export class CreateUserService {

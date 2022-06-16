@@ -1,4 +1,4 @@
-import { GetAllUserService } from "./../../../core/services/user/get-all-user.service";
+import { GetAllUserService } from "../../../core/service/user/get-all-user.service";
 import { IController } from "../controller";
 import { IRouter, Request, Response } from "express";
 import { inject, injectable } from "inversify";
