@@ -4,7 +4,7 @@ import "reflect-metadata";
 import express, { Express, Request, Response, Router } from "express";
 import { setupController } from "./api/http";
 import { setupWebSocket } from "./api/web-socket";
-import { setupDIContainer } from "./inversify.config";
+import { setupDIContainer } from "./di-container";
 import { setupTypeOrm } from "./config/typeorm";
 // const express = require("express");
 const dotenv = require("dotenv");
