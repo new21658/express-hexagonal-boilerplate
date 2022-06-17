@@ -10,8 +10,8 @@ export class CreateUserService {
     @inject(TYPES.UserRepository) private userRepository: IUserRepository,
     @inject(TYPES.CreateUserQueue) private createUserQueue: ICreateUserQueue
   ) {}
-  async create(payload: UserEntity) {
-    await this.userRepository.create(payload);
-    await this.createUserQueue.add(payload);
+  public async create(payload: UserEntity): Promise<UserEntity> {
+    // await this.createUserQueue.add(payload);
+    return await this.userRepository.create(payload);
   }
 }

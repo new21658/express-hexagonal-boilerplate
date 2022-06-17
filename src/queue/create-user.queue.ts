@@ -5,5 +5,8 @@ export class CreateUserQueue implements ICreateUserQueue {
   constructor() {
     // setup bull queue
   }
-  async add(job: JobEnum): Promise<any> {}
+  handler(): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  async add(payload): Promise<any> {}
 }

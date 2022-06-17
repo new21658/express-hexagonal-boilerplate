@@ -7,7 +7,8 @@ export class GetAllUserService {
   constructor(
     @inject(TYPES.UserRepository) private userRepository: IUserRepository
   ) {}
-  getAll() {
-    return this.userRepository.getAll();
+  public async getAll() {
+    // return this.userRepository.getAll();
+    return [];
   }
 }

@@ -6,10 +6,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "concurrently \"tsc --watch\" \"nodemon -q dist/server.js\"",
-    "typeorm": "typeorm-ts-node-commonjs",
-    "migration:gen": "yarn build && yarn typeorm migration:generate -d ./src/config/typeorm/index.ts ",
-    "migration:run": "yarn build && yarn typeorm migration:run -d ./src/config/typeorm/index.ts"
+    "dev": "nodemon ./src/server.ts",
+    "migration:gen": "npx typeorm-ts-node-esm migration:generate -d ./src/config/typeorm/index.ts ",
+    "migration:run": "npx typeorm-ts-node-esm migration:run -d ./src/config/typeorm/index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +16,7 @@
     "bull": "^4.8.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "fastify": "^4.0.3",
     "inversify": "^6.0.1",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",

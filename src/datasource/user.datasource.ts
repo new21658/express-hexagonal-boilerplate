@@ -3,7 +3,7 @@ import { TYPES } from "./../types";
 import { UserEntity } from "../core/entity/user.entity";
 import { inject, injectable } from "inversify";
 import { IUserRepository } from "../core/repository/user/iuser.repository";
-import { User } from "../config/typeorm/entity/user";
+import { User } from "../database/model/user";
 
 @injectable()
 export class UserDataSource implements IUserRepository {

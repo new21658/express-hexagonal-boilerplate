@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { User } from "./entity/user";
+import { User } from "../../database/model/user";
 
 export const AppDataSource = new DataSource({
   type: "mysql",
@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
   migrationsRun: false,
   logging: false,
   migrationsTableName: "migrations",
-  migrations: ["dist/**/migration/*.js"],
+  migrations: ["src/database/migration/*.{ts,js}"],
 });
 
 export const setupTypeOrm = async () => {
