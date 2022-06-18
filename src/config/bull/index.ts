@@ -1,3 +1,4 @@
 export const bullConfig = {
-  redisHost: "redis://127.0.0.1:6379",
+  enableQueue: true,
+  redisHost: process.env.REDIS_HOST,
 };

@@ -6,6 +6,9 @@ import { setupWebSocket } from "./api/web-socket";
 import { setupDIContainer } from "./di-container";
 import { setupTypeOrm } from "./config/typeorm";
 import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
+import { BullMonitorFastify } from "@bull-monitor/fastify";
+import { BullAdapter } from "@bull-monitor/root/dist/bull-adapter";
+import { setupBullMonitor } from "./config/bull/bull-monitor";
 
 const dotenv = require("dotenv");
 
@@ -16,10 +19,11 @@ const runServer = async () => {
 
   const fastify = Fastify({
     logger: true,
-  }).withTypeProvider<JsonSchemaToTsProvider>();
+  });
+  // .withTypeProvider<JsonSchemaToTsProvider>();
   const diContainer = setupDIContainer(fastify);
   await setupTypeOrm();
-
+  await setupBullMonitor(fastify, diContainer);
   setupWebSocket();
   setupController(diContainer);
   setupEventListner(diContainer);

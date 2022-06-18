@@ -8,7 +8,7 @@ export const Types = {
   UserController: "UserController",
   CreateUserService: "CreateUserService",
   GetAllUserService: "GetAllUserService",
-  CreateUserQueue: "CreateUserQueue",
+  IndexUserQueue: "IndexUserQueue",
 
   UserCreatedEventListener: "UserCreatedEventListener",
 };
