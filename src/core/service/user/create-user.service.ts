@@ -1,17 +1,20 @@
-import { IUserRepository } from "../../repository/user/iuser.repository";
-import { TYPES } from "../../../types";
+import { IEventEmitter } from "./../../event/ievent-emitter";
+import { IUserRepository } from "../../repository/user/user.repository";
+import { Types } from "../../../types";
 import { inject, injectable } from "inversify";
-import { ICreateUserQueue } from "../../queue/icreate-user-queue";
 import { UserEntity } from "../../entity/user.entity";
+import { EventType } from "../../event/event-type";
+import { UserCreatedEvent } from "../../event/user-created.event";
 
 @injectable()
 export class CreateUserService {
   constructor(
-    @inject(TYPES.UserRepository) private userRepository: IUserRepository,
-    @inject(TYPES.CreateUserQueue) private createUserQueue: ICreateUserQueue
+    @inject(Types.UserRepository) private userRepository: IUserRepository,
+    @inject(Types.EventEmitter) private eventEmitter: IEventEmitter
   ) {}
   public async create(payload: UserEntity): Promise<UserEntity> {
-    // await this.createUserQueue.add(payload);
-    return await this.userRepository.create(payload);
+    const result = await this.userRepository.create(payload);
+    this.eventEmitter.emit(EventType.userCreated, new UserCreatedEvent(result));
+    return result;
   }
 }

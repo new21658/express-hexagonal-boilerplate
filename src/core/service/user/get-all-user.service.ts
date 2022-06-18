@@ -1,14 +1,13 @@
-import { IUserRepository } from "../../repository/user/iuser.repository";
-import { TYPES } from "../../../types";
+import { IUserRepository } from "../../repository/user/user.repository";
+import { Types } from "../../../types";
 import { inject, injectable } from "inversify";
 
 @injectable()
 export class GetAllUserService {
   constructor(
-    @inject(TYPES.UserRepository) private userRepository: IUserRepository
+    @inject(Types.UserRepository) private userRepository: IUserRepository
   ) {}
   public async getAll() {
-    // return this.userRepository.getAll();
-    return [];
+    return this.userRepository.getAll();
   }
 }

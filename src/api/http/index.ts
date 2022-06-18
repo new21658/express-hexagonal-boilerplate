@@ -1,11 +1,8 @@
-import { TYPES } from "./../../types";
-import { Application, Router } from "express";
+import { Types } from "./../../types";
+import { FastifyInstance } from "fastify";
 import { UserController } from "./v1/user.controller";
 import { Container } from "inversify";
 
-export const setupController = (app: Application, diContainer: Container) => {
-  app.use(
-    "/v1/users",
-    diContainer.get<UserController>(TYPES.UserController).getRouter()
-  );
+export const setupController = (diContainer: Container) => {
+  diContainer.get<UserController>(Types.UserController);
 };

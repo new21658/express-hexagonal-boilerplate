@@ -1,22 +1,48 @@
+import { Context } from "./../../../di-container/context";
+import { FastifyInstance } from "./../../../../node_modules/fastify/types/instance.d";
 import { GetAllUserService } from "../../../core/service/user/get-all-user.service";
-import { IController } from "../controller";
-import { IRouter, Request, Response } from "express";
+import { BaseController } from "../base-controller";
 import { inject, injectable } from "inversify";
-import { TYPES } from "../../../types";
+import { Types } from "../../../types";
+import { FastifyRequest } from "fastify";
+import { CreateUserService } from "../../../core/service/user/create-user.service";
+import { StatusCodes } from "http-status-codes";
 
+const createUserSchema = {
+  body: {
+    type: "object",
+    properties: {
+      name: {
+        type: "string",
+      },
+      username: {
+        type: "string",
+      },
+    },
+    required: ["name", "username"],
+  },
+};
 @injectable()
-export class UserController implements IController {
+export class UserController extends BaseController {
   constructor(
-    @inject(TYPES.Router) private router: IRouter,
-    @inject(TYPES.GetAllUserService)
-    private getAllUserService: GetAllUserService
+    @inject(Types.Context) context: Context<FastifyInstance>,
+    @inject(Types.GetAllUserService)
+    private getAllUserService: GetAllUserService,
+    @inject(Types.CreateUserService)
+    private createUserService: CreateUserService
   ) {
-    router.get("/", this.getAll.bind(this));
+    super(context, "/users", "v1");
   }
-  getRouter(): IRouter {
-    return this.router;
+  async registerRoutes(app: FastifyInstance) {
+    app.get("/", this.getAll.bind(this));
+    app.post("/", { schema: createUserSchema }, this.create.bind(this));
   }
-  async getAll(req: Request, res: Response) {
-    res.json(await this.getAllUserService.getAll());
+
+  async getAll(req: FastifyRequest) {
+    return this.getAllUserService.getAll();
+  }
+
+  async create(req: FastifyRequest) {
+    return this.createUserService.create({ ...(req.body as any) });
   }
 }

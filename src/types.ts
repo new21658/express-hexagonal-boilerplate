@@ -1,10 +1,14 @@
-export const TYPES = {
-  App: Symbol.for("App"),
-  Router: Symbol.for("Router"),
-  AppDataSource: Symbol.for("AppDataSource"),
-  UserRepository: Symbol.for("UserRepository"),
-  UserController: Symbol.for("UserController"),
-  CreateUserService: Symbol.for("CreateUserService"),
-  GetAllUserService: Symbol.for("GetAllUserService"),
-  CreateUserQueue: Symbol.for("CreateUserQueue"),
+export const Types = {
+  Context: "Context",
+  AppDataSource: "AppDataSource",
+  BaseController: "BaseController",
+  EventEmitter: "EventEmitter",
+
+  UserRepository: "UserRepository",
+  UserController: "UserController",
+  CreateUserService: "CreateUserService",
+  GetAllUserService: "GetAllUserService",
+  CreateUserQueue: "CreateUserQueue",
+
+  UserCreatedEventListener: "UserCreatedEventListener",
 };
