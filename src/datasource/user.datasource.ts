@@ -1,9 +1,9 @@
-import { AppDataSource } from "./../config/typeorm/index";
-import { Types } from "./../types";
-import { UserEntity } from "../core/entity/user.entity";
+import { AppDataSource } from "@config/typeorm/index";
+import { Types } from "@types";
+import { UserEntity } from "@core/entity/user.entity";
 import { inject, injectable } from "inversify";
-import { IUserRepository } from "../core/repository/user/user.repository";
-import { UserModel } from "../database/model/user.model";
+import { IUserRepository } from "@core/repository/user/user.repository";
+import { UserModel } from "@database/model/user.model";
 
 @injectable()
 export class UserDataSource implements IUserRepository {

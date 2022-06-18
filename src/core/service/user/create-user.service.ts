@@ -1,10 +1,10 @@
-import { IEventEmitter } from "./../../event/ievent-emitter";
-import { IUserRepository } from "../../repository/user/user.repository";
-import { Types } from "../../../types";
+import { IEventEmitter } from "@/core/event/ievent-emitter";
+import { IUserRepository } from "@/core/repository/user/user.repository";
+import { Types } from "@types";
 import { inject, injectable } from "inversify";
-import { UserEntity } from "../../entity/user.entity";
-import { EventType } from "../../event/event-type";
-import { UserCreatedEvent } from "../../event/user-created.event";
+import { UserEntity } from "@/core/entity/user.entity";
+import { EventType } from "@/core/event/event-type";
+import { UserCreatedEvent } from "@/core/event/user-created.event";
 
 @injectable()
 export class CreateUserService {

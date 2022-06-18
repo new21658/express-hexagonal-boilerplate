@@ -1,11 +1,11 @@
-import { Context } from "./../../../di-container/context";
-import { FastifyInstance } from "./../../../../node_modules/fastify/types/instance.d";
-import { GetAllUserService } from "../../../core/service/user/get-all-user.service";
-import { BaseController } from "../base-controller";
+import { Context } from "@/di-container/context";
+import { FastifyInstance } from "fastify";
+import { GetAllUserService } from "@core/service/user/get-all-user.service";
+import { BaseController } from "@lib/controller/base-controller";
 import { inject, injectable } from "inversify";
-import { Types } from "../../../types";
+import { Types } from "@types";
 import { FastifyRequest } from "fastify";
-import { CreateUserService } from "../../../core/service/user/create-user.service";
+import { CreateUserService } from "@core/service/user/create-user.service";
 import { StatusCodes } from "http-status-codes";
 
 const createUserSchema = {

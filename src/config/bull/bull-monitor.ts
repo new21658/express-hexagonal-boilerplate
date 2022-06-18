@@ -1,9 +1,9 @@
-import { Types } from "./../../types";
+import { Types } from "@types";
 import { BullMonitorFastify } from "@bull-monitor/fastify";
 import { FastifyInstance } from "fastify";
 import { BullAdapter } from "@bull-monitor/root/dist/bull-adapter";
 import { Container } from "inversify";
-import { IndexUserQueue } from "../../queue/index-user-queue";
+import { IndexUserQueue } from "@queue/index-user-queue";
 
 export const setupBullMonitor = async (
   app: FastifyInstance,

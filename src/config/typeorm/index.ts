@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { UserModel } from "../../database/model/user.model";
+import { UserModel } from "@database/model/user.model";
 
 export const AppDataSource = new DataSource({
   name: "default",

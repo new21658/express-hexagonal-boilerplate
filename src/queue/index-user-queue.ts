@@ -1,4 +1,4 @@
-import { BaseQueue, IJob } from "../lib/queue/base-queue";
+import { BaseQueue, IJob } from "@lib/queue/base-queue";
 import { QueueNames } from "./queue-name";
 
 export class IndexUserQueue extends BaseQueue {

@@ -1,14 +1,14 @@
-import { setupEventListner } from "./event-listener/index";
+import { setupEventListner } from "@event-listener/index";
 import "reflect-metadata";
 import Fastify from "fastify";
-import { setupController } from "./api/http";
-import { setupWebSocket } from "./api/web-socket";
-import { setupDIContainer } from "./di-container";
-import { setupTypeOrm } from "./config/typeorm";
+import { setupController } from "@api/http";
+import { setupWebSocket } from "@api/web-socket";
+import { setupDIContainer } from "@di-container/index";
+import { setupTypeOrm } from "@config/typeorm";
 import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
 import { BullMonitorFastify } from "@bull-monitor/fastify";
 import { BullAdapter } from "@bull-monitor/root/dist/bull-adapter";
-import { setupBullMonitor } from "./config/bull/bull-monitor";
+import { setupBullMonitor } from "@config/bull/bull-monitor";
 
 const dotenv = require("dotenv");
 

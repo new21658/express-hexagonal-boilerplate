@@ -1,4 +1,4 @@
-import { IEventEmitter } from "./../../core/event/ievent-emitter";
+import { IEventEmitter } from "@core/event/ievent-emitter";
 import { EventEmitter } from "events";
 
 export class EventEmitter2 implements IEventEmitter {

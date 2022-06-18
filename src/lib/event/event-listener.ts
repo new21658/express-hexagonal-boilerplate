@@ -1,5 +1,5 @@
 import { injectable, unmanaged } from "inversify";
-import { IEventEmitter } from "../../core/event/ievent-emitter";
+import { IEventEmitter } from "@core/event/ievent-emitter";
 
 @injectable()
 export abstract class EventListener {

@@ -1,6 +1,6 @@
 import Queue, { JobOptions, Queue as IQueue } from "bull";
 import { injectable, unmanaged } from "inversify";
-import { bullConfig } from "../../config/bull";
+import { bullConfig } from "@config/bull";
 
 export interface IOptions extends JobOptions {}
 

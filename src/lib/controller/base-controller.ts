@@ -1,4 +1,4 @@
-import { Context } from "./../../di-container/context";
+import { Context } from "@di-container/context";
 import { injectable, unmanaged } from "inversify";
 import { FastifyInstance } from "fastify";
 import path from "path";
