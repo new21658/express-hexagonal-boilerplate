@@ -1,7 +1,7 @@
 import { Context } from "@/di-container/context";
 import { FastifyInstance } from "fastify";
 import { GetAllUserService } from "@core/service/user/get-all-user.service";
-import { BaseController } from "@lib/controller/base-controller";
+import { BaseController } from "@lib/controller/base.controller";
 import { inject, injectable } from "inversify";
 import { Types } from "@types";
 import { FastifyRequest } from "fastify";

@@ -7,9 +7,9 @@ import { UserController } from "@api/http/v1/user.controller";
 import { CreateUserService } from "@core/service/user/create-user.service";
 import { UserDataSource } from "@datasource/user.datasource";
 import { Types } from "@types";
-import { IndexUserQueue } from "@queue/index-user-queue";
+import { IndexUserQueue } from "@queue/index-user.queue";
 import { EventEmitter2 } from "@lib/event/event-emitter";
-import { UserCreatedEventListener } from "@event-listener/user-created.listener";
+import { UserCreatedEventListener } from "@event-listener/user-created.event-listener";
 
 let diContainer: Container;
 

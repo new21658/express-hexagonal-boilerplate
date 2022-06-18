@@ -1,4 +1,4 @@
-import { IUserRepository } from "@/core/repository/user/user.repository";
+import { IUserRepository } from "@/core/repository/user/iuser.repository";
 import { Types } from "@types";
 import { inject, injectable } from "inversify";
 

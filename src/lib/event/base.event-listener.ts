@@ -2,7 +2,7 @@ import { injectable, unmanaged } from "inversify";
 import { IEventEmitter } from "@core/event/ievent-emitter";
 
 @injectable()
-export abstract class EventListener {
+export abstract class BaseEventListener {
   constructor(
     private eventEmitter: IEventEmitter,
     @unmanaged() private eventName: string

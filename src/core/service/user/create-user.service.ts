@@ -1,9 +1,9 @@
 import { IEventEmitter } from "@/core/event/ievent-emitter";
-import { IUserRepository } from "@/core/repository/user/user.repository";
+import { IUserRepository } from "@/core/repository/user/iuser.repository";
 import { Types } from "@types";
 import { inject, injectable } from "inversify";
 import { UserEntity } from "@/core/entity/user.entity";
-import { EventType } from "@/core/event/event-type";
+import { EventType } from "@/core/event/event-type.constant";
 import { UserCreatedEvent } from "@/core/event/user-created.event";
 
 @injectable()
